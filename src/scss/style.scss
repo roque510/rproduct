@@ -1,0 +1,205 @@
+$desired-width: 100%; // you can have 600px or 100% of something.
+$your-images-width: 1440;
+$your-images-heigh: 600;
+
+
+
+$white: #FDFDFD;
+$darkblue: #0A3A69;
+$blue: #075AA0;
+$lightgray: #D2D4D5;
+$lightblue: #6CA1CA;
+$grey: #9B9C9F;
+
+
+$orange: #E09154;
+$purple: #9879B2;
+$aqua: #0EB1B6;
+$lightgreen: #88C041;
+$red: #DF6153;
+$yellow: #EEB834;
+$brightblue: #17A6DE;
+
+$bg: $lightgray;
+
+@font-face {
+    font-family: 'Fertigo_PRO';
+    src: url('Fertigo_PRO-webfont.woff2') format('woff2'),
+         url('Fertigo_PRO-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+  background:$bg !important;
+  font-family: 'Fertigo_PRO' !important;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .slide {
+    width:100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.container{
+  padding-top: 10px !important;
+  width: $desired-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.slider{
+  @include aspect-ratio($your-images-width,$your-images-heigh);
+  border:3pt solid black;
+  
+  
+}
+
+.leftBtn{
+  margin-left:10px;
+  position:absolute;
+  z-index:4;
+  width:51px;
+  height:51px;
+  overflow:hidden;
+  top:40%;
+  bottom:0;
+  cursor:pointer;
+}
+
+.rightBtn{
+    cursor:pointer;
+  margin-right:10px;
+  position:absolute;
+  z-index:3;
+  overflow:hidden;
+  top:40%;  
+  bottom:0; 
+  height:51px;
+  width:51px;
+  right:0;
+}
+
+.rightBtn > img{
+  position:relative;
+  bottom:56px;
+  z-index:3;
+  
+}
+.red{
+  background:red !important;
+}
+
+.pausebtn{
+  font-size: 35px;
+  color:white;
+  cursor: pointer;
+}
+
+.menuNav{
+	width:70%;
+	height:30px;
+	background-color:rgba(0,0,0,0.3);
+	position:absolute;
+	bottom:0;
+	margin:auto;
+	left:0;
+	right:0;
+	padding:10px;
+	float:left;
+	z-index:4;
+}
+
+$playPauseSize:30px;
+.playPause{
+	float:left;
+	height:$playPauseSize;
+	width:$playPauseSize;
+  margin-top: -5px;
+}
+
+.playPause > img {
+	width:100%;
+	height:100%;
+}
+
+.divider{
+	background:rgba(255,255,255,0.2);
+	width:2px;
+	height:150%;
+	float:left;
+	margin-left:20px;
+	margin-right:20px;
+}
+
+.vline{
+	border-left:2pt solid $bg;
+}
+
+#slider3{
+  z-index:2;
+}
+
+
+
+.currentSlide{
+  z-index:3;
+}
+
+.navbar-brand > img {
+  height: 165%;
+}
+
+.Main-Title{
+  
+  margin-top: 0px;
+  padding-top:10px;
+  height: 80px;
+  width: 80%;
+}
+
+.Main-Title > span {
+  color: $blue;
+}
+
+.wrapper {
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+}
+
+.card
+{
+  background: $white;
+  border-radius:2px;
+  min-height: 50px;
+}
+
+.pushable{
+  background-color:$white;
+  height: 100% !important;
+}
+
+.col-centered{
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav-wrapper{
+  background:$blue;
+  color:black !important;
+}
